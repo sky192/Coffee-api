@@ -1,0 +1,10 @@
+doctype html
+
+html
+  include partials/head.pug
+  body
+   h1 US States
+   for state in states
+    h2= state.name
+    div= state.capital
+
