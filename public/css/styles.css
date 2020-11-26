@@ -1,17 +1,19 @@
 body {
-    background-color: bisque;
+    background-color: rgb(203, 170, 216);
     text-align: center;
 }
 
 h1 { 
-    color: blueviolet;
+    color: rgb(109, 16, 78);
 }
 
-h2 {
-    color: brown;
-    font-size: 25px;
+
+table, th,tr, td {
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 15px;
 }
 
-h3 {
-    font-size: 15px;
+.sggg {
+    width: 110px;
 }

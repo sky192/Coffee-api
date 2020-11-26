@@ -2,10 +2,32 @@ html
   include partials/head.pug
   body
    h1 US States
-   for state in states
-    h2= state.name
-    h3= state.capital
-    
-    
 
-
+   table
+      thead
+          tr
+            th Name
+            th abv
+            th Capital
+            th Largest city
+            th Admitted to union
+            th Population
+            th Flag
+      tbody
+          each state in states
+            tr
+              td #{state.name}
+              td #{state.abv}
+              td #{state.capital}
+              td #{state.largest_city}
+              td #{state.admitted_to_union}   
+              td #{state.population}
+              td 
+               img.sggg(src=state.flag)
+                 
+      tfoot
+          tr
+           th(colspan='6')  
+           
+ 
+  
