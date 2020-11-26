@@ -8,7 +8,7 @@ const getAllStates = (req, res) => {
 const getStateByCapital = (req, res) => {
     const { capital } = req.params
 
-    const foundState = states.filter((element) =>  element.capital === capital)
+    const foundState = states.filter((state) =>  state.capital === capital)
 
     return res.send(foundState)
 }
