@@ -6,4 +6,5 @@ API of coffees.
 
 # Allows you 
 to search by coffee title , description and ingredients.
-Also new coffee can be added or deleted using this API
+
+Also new coffee can be added or deleted using this API.
