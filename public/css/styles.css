@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(221, 199, 139);
+    text-align: center;
+}
+
+h1 { 
+    padding-top: 25px;
+    color: rgb(97, 70, 20);
+}
+
+table {
+  border-collapse: collapse;
+  width:90%;
+  text-align: center;
+  margin-left: 60px;
+  margin-top: 60px;
+}
+
+table,tr, td {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+table th {
+  background-color: rgb(148, 92, 20);
+  padding:5px;
+  text-align: center;
+  color: white;
+  border:2px solid black
+}
+
+.capital {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
