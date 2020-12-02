@@ -1,19 +1,36 @@
 body {
-    background-color: rgb(203, 170, 216);
+    background-color: rgb(221, 199, 139);
     text-align: center;
 }
 
 h1 { 
-    color: rgb(109, 16, 78);
+    padding-top: 25px;
+    color: rgb(97, 70, 20);
 }
 
-
-table, th,tr, td {
-    border-collapse: collapse;
-    margin: 0 auto;
-    padding: 15px;
+table {
+  border-collapse: collapse;
+  width:90%;
+  text-align: center;
+  margin-left: 60px;
+  margin-top: 60px;
 }
 
-.sggg {
-    width: 110px;
+table,tr, td {
+  border: 2px solid black;
+  padding: 10px;
 }
+
+table th {
+  background-color: rgb(148, 92, 20);
+  padding:5px;
+  text-align: center;
+  color: white;
+  border:2px solid black
+}
+
+.capital {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+

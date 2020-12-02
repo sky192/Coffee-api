@@ -1,18 +1,21 @@
 const express = require('express')
 
-const bodyParser = require('body-parser')
+//const bodyParser = require('body-parser')
 
-const { getAllStates, getStateByCapital } = require('./controllers/states')
+//const { getStateByCapital, getAllCoffes } = require('./controllers/coffee')
 
 const app = express()
 
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 
-app.get('/', getAllStates)
+app.get('/api', (request, response) => {
+    return response.render('index')
+})
 
-app.get('/:capital', getStateByCapital)
-
+/*app.get('/coffee', (request, response) => {
+    return response.render('coffee')
+}) */
 
 app.all('*', (req,res) => {
     return res.sendStatus(404)
