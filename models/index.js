@@ -5,6 +5,6 @@ const connection = new Sequelize('coffees', 'admin', 'coffee$', {
     host: 'localhost', dialect: 'mysql'
 })
 
-const coffees = coffeeModel(connection, Sequelize)
+const Coffees = coffeeModel(connection, Sequelize)
 
-module.exports = { heroes }
+module.exports = Coffees 

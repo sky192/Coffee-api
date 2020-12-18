@@ -1,31 +1,24 @@
 const express = require('express')
 
-const coffees = require('./coffees')
 
-//const bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 
-//const { getStateByCapital, getAllCoffes } = require('./controllers/coffee')
+const  { getAllCoffees, getCoffeeByTitle, saveNewCoffee } = require('./controllers/coffee')
 
 const app = express()
 
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 
-app.get('/', (request, response) => {
+app.get('/api', (request, response) => {
     return response.render('index')
 })
 
-app.get('/coffees', (request, response) => {
-    return response.send(coffees)
-})
+app.get('/coffee', getAllCoffees)
 
-app.get('/:title', (request, response) => {
-    const { title } = request.params
+app.get('/title', getCoffeeByTitle)
 
-    const foundCoffee = coffees.filter((coffee) => coffee.title === title)
-
-    return response.send(foundCoffee)
-})
+app.post('/coffee', bodyParser.json(), saveNewCoffee)
 
 
 /*app.get('/coffee', (request, response) => {

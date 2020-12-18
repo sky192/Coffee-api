@@ -4,6 +4,10 @@ const coffees = (connection, Sequelize) => {
         title: { type: Sequelize.STRING },
         description: { type: Sequelize.STRING },
         ingredients : { type: Sequelize.STRING },
+    }, {
+        defaultScope: {
+            attributes: { exclude: ['deletedAt'] }
+        }
     }, { paranoid: true })
 }
 
