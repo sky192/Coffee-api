@@ -2,23 +2,32 @@
 const models = require('../models')
 
 
+
 const getAllCoffees = async (request, response) => {
-    try {
+    
     const coffees = await models.Coffees.findAll({})
 
     return response.send(coffees)
-} catch (error) {
-    response.status(500)
-}
+
 }
 
 const getCoffeeByTitle = async (request, response) => {
+    try {
     const { title } = request.params
 
-    const foundCoffee = await models.coffees.findOne({ where: { title } })
-
-    return response.send(foundCoffee)
+    const foundCoffee = await models.Coffees.findOne({
+         where: {
+            title: { [models.Op.like]: `%${title}%` },
+         }
+    })
+        return foundCoffee
+            ? response.send(foundCoffee)
+            : response.sendStatus(404)
+    } catch (error) {
+        return response.status(500).send('Unable to retrieve coffee, please try again')
+    }
 }
+
 
 const saveNewCoffee = (request, response) => {
     const { title, description, ingredients } = request.body

@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -12,7 +12,6 @@ module.exports = {
       id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
       title: { type: Sequelize.STRING },
       description: { type: Sequelize.STRING },
-      ingredients: { type: Sequelize.STRING },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
 
       updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
