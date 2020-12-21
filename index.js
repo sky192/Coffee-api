@@ -11,13 +11,13 @@ const app = express()
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 
-app.get('/api', (request, response) => {
+app.get('/', (request, response) => {
   return response.render('index')
 })
 
 app.get('/coffee', getAllCoffees)
 
-app.get('/title', getCoffeeByTitle)
+app.get('/coffee/:title', getCoffeeByTitle)
 
 app.post('/coffee', bodyParser.json(), saveNewCoffee)
 

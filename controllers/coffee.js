@@ -2,7 +2,7 @@
 
 const models = require('../models')
 
-const Op = require('Sequelize').Op
+
 
 
 
@@ -17,9 +17,8 @@ const getCoffeeByTitle = async (request, response) => {
     const { title } = request.params
 
     const foundCoffee = await models.Coffees.findOne({
-      where: {
-        title: { [models.Op.like]: `%${title}%` },
-      }
+      where: { title }
+
     })
 
     return foundCoffee

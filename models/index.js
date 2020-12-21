@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const allConfigs = require('../config/sequelize')
 const coffeeModel = require('./coffee')
 
-const environment = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
+const environment = process.env.NODE_ENV || 'development'
 const config = allConfigs[environment]
 
 const connection = new Sequelize(config.database, config.username, config.password, {
@@ -12,4 +12,4 @@ const connection = new Sequelize(config.database, config.username, config.passwo
 
 const Coffees = coffeeModel(connection, Sequelize)
 
-module.exports = { Coffees }
+module.exports = { Coffees, Op: Sequelize.Op, }
