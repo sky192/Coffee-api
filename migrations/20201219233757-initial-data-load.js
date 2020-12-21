@@ -1,14 +1,16 @@
-'use strict';
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
+
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
+  up: async (queryInterface) => {
     /**
      * Add altering commands here.
      *
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.createTable('coffees', [
+    await queryInterface.bulkInsert('coffees', [
       {
         title: 'Black',
         description: 'Black coffee is as simple as it gets with ground coffee beans steeped in hot water, served warm. And if you want to sound fancy, you can call black coffee by its proper name: cafe noir.',
@@ -65,7 +67,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.bulkDelete('coffees')
-
+    return queryInterface.bulkDelete('coffees')
   }
-};
+}

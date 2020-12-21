@@ -1,13 +1,14 @@
 {
-  "name": "us-states-api",
+  "name": "coffee-api",
   "version": "1.0.0",
   "description": "You will be building a working API and front-end. This is part 1 of 2. Create a new repo in GitHub for your project, make your instructor a collaborator, and clone it locally. Remember to work in and part-one-answer branch, not master In this part of your project you will be building the front-end for your API site. The design and content of your front-end is up to you, the only requirements are that it provide documentation for using the API you will be building and that it be built using Pug",
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/.bin/env-cmd ./node_modules/.bin/nodemon index.js",
-        "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
+    "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
     "lint": "./node_modules/.bin/eslint --format codeframe .",
-      "lint:fix": "./node_modules/.bin/eslint --fix --format codeframe .",
+    "lint:fix": "./node_modules/.bin/eslint --fix --format codeframe .",
+    "lint:puglint": "./node_modules/.bin/pug-lint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,8 @@
   "homepage": "https://github.com/sky192/US-States-api#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cat": "^0.2.0",
+    "cli": "^1.0.1",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "pug": "^3.0.0",
@@ -29,9 +32,13 @@
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "env-cmd": "^10.1.0",
     "eslint": "^7.14.0",
+    "mocha": "^8.2.1",
     "nodemon": "^2.0.6",
-    "pug-lint": "^2.6.0"
+    "pug-lint": "^2.6.0",
+    "sinon": "^9.2.2",
+    "sinon-chai": "^3.5.0"
   }
 }

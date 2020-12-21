@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 
 
 module.exports = {
@@ -14,13 +16,12 @@ module.exports = {
       description: { type: Sequelize.STRING },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
 
-      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
-      },
-       deletedAt: { type: Sequelize.DATE },
+      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP') },
+      deletedAt: { type: Sequelize.DATE },
 
     })
-    },
-  
+  },
+
 
   down: async (queryInterface, Sequelize) => {
     /**
@@ -29,6 +30,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropTable('coffees');
+    await queryInterface.dropTable('coffees')
   }
-};
+}
