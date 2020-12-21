@@ -4,7 +4,7 @@ const express = require('express')
 
 const bodyParser = require('body-parser')
 
-const { getAllCoffees, getCoffeeByTitle, saveNewCoffee } = require('./controllers/coffee')
+const { getAllCoffees, getCoffeeByTitle, saveNewCoffee, deleteCoffee } = require('./controllers/coffee')
 
 const app = express()
 
@@ -20,6 +20,8 @@ app.get('/coffee', getAllCoffees)
 app.get('/coffee/:title', getCoffeeByTitle)
 
 app.post('/coffee', bodyParser.json(), saveNewCoffee)
+
+app.delete('/coffee/:id', deleteCoffee)
 
 
 /* app.get('/coffee', (request, response) => {

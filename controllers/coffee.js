@@ -30,18 +30,34 @@ const getCoffeeByTitle = async (request, response) => {
 }
 
 
-const saveNewCoffee = (request, response) => {
-  const { title, description, ingredients } = request.body
+const saveNewCoffee = async (request, response) => {
+  const { title, description } = request.body
 
-  if (!title || !description || !ingredients) {
-    return response.status(400).send('The following fields are required: title, description, ingredients')
+  if (!title || !description) {
+    return response.status(400).send('The following fields are required: title, description')
   }
 
-  const newCoffee = { title, description, ingredients }
+  const newCoffee = await models.Coffees.create({ title, description })
 
-  coffees.push(newCoffee)
 
   return response.status(201).send(newCoffee)
 }
 
-module.exports = { getAllCoffees, getCoffeeByTitle, saveNewCoffee }
+
+const deleteCoffee = async (request, response) => {
+  try {
+    const id = parseInt(request.params.id)
+    const coffee = await models.Coffee.findOne({ where: { id } })
+
+    if (!coffee) return response.status(404).send(`Unknown animal with ID: ${id}`)
+
+
+    await models.Coffees.destroy({ where: { id } })
+
+    return response.send(`Successfully deleted the coffee with ID: ${id}`)
+  } catch (error) {
+    return response.status(500).send('Unknown error while deleting coffee')
+  }
+}
+
+module.exports = { getAllCoffees, getCoffeeByTitle, saveNewCoffee, deleteCoffee }
