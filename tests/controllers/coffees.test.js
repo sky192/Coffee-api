@@ -37,7 +37,7 @@ describe('Controllers - coffee', () => {
 
         await getCoffeeByTitle(request, response)
 
-        expect(stubbedFindOne).to.have.been.calledWith({ where: { title: 'cappucino' } })
+        expect(stubbedFindOne).to.have.been.calledWith({ where: { title: 'Cappuccino' } })
         expect(stubbedSend).to.have.been.calledWith(singleCoffee)
       })
   })
