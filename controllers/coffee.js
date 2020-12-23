@@ -17,7 +17,7 @@ const getCoffeeByTitle = async (request, response) => {
     const { title } = request.params
 
     const foundCoffee = await models.Coffees.findOne({
-      where: { title }
+      where: { title: { [models.Op.like]: `%${title}%` }, }
 
     })
 
